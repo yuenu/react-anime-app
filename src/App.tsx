@@ -1,13 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import styled from 'styled-components';
 import './App.css';
+
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       Hello World
-    </div>
+    </AppContainer>
   );
 }
 
