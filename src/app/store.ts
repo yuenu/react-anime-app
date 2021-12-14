@@ -2,7 +2,6 @@ import {
   configureStore,
   ThunkAction,
   Action,
-  getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import homePageReducer from "./containers/HomePage/HomePageSlice";
 import ReduxLogger from "redux-logger";

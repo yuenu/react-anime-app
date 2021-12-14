@@ -26,18 +26,20 @@ const actionDispatch = (dispatch: Dispatch) => ({
 function HomePage(props: Props) {
 
   const { setAnimePage } = actionDispatch(useAppDispatch())
-  const fetchAnimePage = async () => {
-    const animePage = await AnimeService.getAnimePage(0, 200).catch((err) => {
-      console.log('Error:', err)
-    })
 
-    console.log('Anime page:', animePage)
-    if (animePage) setAnimePage(animePage)
-  }
 
   useEffect(() => {
+    const fetchAnimePage = async () => {
+      const animePage = await AnimeService.getAnimePage(0, 200).catch((err) => {
+        console.log('Error:', err)
+      })
+
+      console.log('Anime page:', animePage)
+      if (animePage) setAnimePage(animePage)
+    }
+
     fetchAnimePage()
-  }, [])
+  }, [setAnimePage])
 
   return (
     <Container>
